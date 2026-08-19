@@ -1,70 +1,21 @@
-This simulates a bank atm and uses functions to direct the outcome of the user input. 
-You start of with a certain amount of money and can withdraw check balance and add money.
-This program also uses try and except to handle invalid user inputs like an atm would.
-here is the code:
--
-money = 500
+- **ATM SIMULATOR**
 
-menu = input("Welcome\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit\n")
-    
-def print_menu():
-    print("1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit")
+This is a Python project I made while learning Python.
 
+- **What it does**
 
+Simulates the experience of an atm machine.
 
+- **Features**
 
-def deposit(money):
-    try:
-        deposit = int(input("How much do you want to deposit?"))
-        print(f"You have deposited £{deposit}")
-        money += deposit
-    except ValueError:
-        print("Please enter a valid number.")
-    return money
+- Code is broken up into functions making it reusable and clearer.
+- The money variable is called in by most functions.
+- Variable manipulation and comparison
 
-        
-    
+- **What I learned**
 
-def withdraw(money):
+- Return function
+- How to loop multiple functions together
 
-        try:
-            withdraw = int(input("How much do you want to withdraw?"))
-
-            if withdraw > money:
-             print("Insufficient funds.")
-            else:
-                money -= withdraw
-                print(f"You have withdrawn £{withdraw}")
-
-        except ValueError:
-            print("Please enter a valid number.")
-        return money
-
-def check_balance(money):
-    print(f"Your balance is £{money}")
-    return money
-
-
-
-while True:
-    
-    if menu == "1":
-        money = deposit(money)
-        print_menu()
-        menu = input("")
-    elif menu == "2":
-        money = withdraw(money)
-        print_menu()
-        menu = input("")
-    elif menu == "3":
-        money = check_balance(money)
-        print_menu()
-        menu = input("")
-    elif menu == "4":
-        print("Thank you for using our ATM")
-        break
-    else:
-        print("Invalid input")
-        print_menu()
-        menu = input("")
-    
+-**Future improvements**
+-Clearer menu
